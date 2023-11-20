@@ -1,4 +1,5 @@
-public class Main{
+public class Main {
+    //  1 Hour DONE Till datatype
     public static void main(String[] args) {
         // Primitive data types
         int myNum = 5;
