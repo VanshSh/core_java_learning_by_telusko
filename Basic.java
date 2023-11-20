@@ -1,5 +1,5 @@
-public class Main {
-    //  1 Hour DONE Till datatype
+public class Basic {
+    // 1 Hour DONE Till datatype
     public static void main(String[] args) {
         // Primitive data types
         int myNum = 5;
@@ -8,9 +8,9 @@ public class Main {
         boolean myBool = true;
 
         // Additional primitive data types
-        byte myByte = 127;        // 8-bit signed integer
-        short myShort = 32767;    // 16-bit signed integer
-        long myLong = 9223372036854775807L;  // 64-bit signed integer
+        byte myByte = 127; // 8-bit signed integer
+        short myShort = 32767; // 16-bit signed integer
+        long myLong = 9223372036854775807L; // 64-bit signed integer
         double myDouble = 19.99d; // 64-bit double-precision floating-point
 
         // Reference data type
@@ -26,6 +26,14 @@ public class Main {
         System.out.println("long: " + myLong);
         System.out.println("double: " + myDouble);
         System.out.println("String: " + myText);
+
+        int num = 7;
+        num += 5;
+        System.out.println(" U_U L-33 in main.java => " + num);
+
+        float floatValue = 54.56f;
+        double doubleValue = 54.50;
+        boolean resultValue = floatValue >= doubleValue;
+        System.out.println(" U_U L-37 in Basic.java => " + resultValue);
     }
 }
-
