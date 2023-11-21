@@ -43,4 +43,5 @@ String:
 Use for storing sequences of characters or text.
 Example: String greeting = "Hello, World!";
 
+
 ```
