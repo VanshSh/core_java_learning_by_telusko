@@ -35,5 +35,16 @@ public class Basic {
         double doubleValue = 54.50;
         boolean resultValue = floatValue >= doubleValue;
         System.out.println(" U_U L-37 in Basic.java => " + resultValue);
+
+        int n = 4;
+        String result;
+        if (n % 2 == 0)
+            result = "EVEN";
+        else
+            result = "ODD";
+
+        System.out.println(" U_U L-46 in Basic.java => " + result);
+        System.out.println(" U_U L-46 in Basic.java => " + 4 % 2);
+
     }
 }
