@@ -74,3 +74,14 @@ public class ObjectFile {
 
  
  ```
+
+## - Create Array 
+
+```
+int[] myNum = {10, 20, 30, 40};
+
+OR
+
+int myNum[] = {10, 20, 30, 40};
+
+```

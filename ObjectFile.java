@@ -15,6 +15,9 @@ public class ObjectFile {
 
         Calculator calc = new Calculator();
         calc.add();
+        int[] myNum = { 10, 20, 30, 40 };
+
+        System.out.println(" U_U L-20 in ObjectFile.java => " + myNum[1]);
 
     }
 }
