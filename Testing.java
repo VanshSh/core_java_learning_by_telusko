@@ -1,20 +1,24 @@
-import java.util.Scanner;
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.function.*;
+import java.util.regex.*;
+import java.util.stream.*;
+import static java.util.stream.Collectors.joining;
+import static java.util.stream.Collectors.toList;
 
 public class Testing {
+    public static void main(String[] args) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 
-    public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-        int i = scan.nextInt();
-        double d = scan.nextDouble();
-        scan.nextLine(); // Consume the newline character left by nextDouble()
-        String s = scan.nextLine();
+        int N = Integer.parseInt(bufferedReader.readLine().trim());
+        for (int i = 1; i <= 10; i++) {
+            System.out.println(N + " x " + i + " = " + N * i);
+        }
 
-        // Write your code here.
-
-        System.out.println("Int: " + i);
-        System.out.println("Double: " + d);
-        System.out.println("String: " + s);
-
-        scan.close();
+        bufferedReader.close();
     }
 }
