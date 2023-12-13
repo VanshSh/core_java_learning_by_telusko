@@ -104,6 +104,46 @@ int myNum[] = {10, 20, 30, 40};
 
         }
 
+```
+
+## Static Variables
+
+To make something as class variables not object variables.
+
+```
+class Mobile {
+
+    static String name;
+    
+    static {
+        name = "Mobile Apple IOS";
+    }  // It will call static variable only once
+
+    public void show() {
+        System.out.println(" U_U L-7 in StaticVariable.java => " + brand + " : " + price + " : " + name);
+
+    }
+
+}
+
+
+public class StaticVariable {
+    public static void main(String[] args) {
+
+        Mobile obj1 = new Mobile();
+        obj1.name = "Xiaomo S2";
+
+        Mobile obj2 = new Mobile();
+
+        Mobile.name = "Xiaomo S3"; // Avoid
+
+        obj1.show();
+        obj2.show();
+
+
+
+    }
+}
 
 
 ```
