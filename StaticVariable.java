@@ -12,6 +12,12 @@ class Mobile {
 
     }
 
+    public static void show1(Mobile obj) {
+        // Also here we can not call directly non static variable inside static method
+        // But we can do indirectly by passing the object while calling this method
+        System.out.println(obj.brand + " : " + obj.price + " : " + name);
+    }
+
 }
 
 public class StaticVariable {
@@ -19,7 +25,8 @@ public class StaticVariable {
 
     {
 
-        // Class.forName('Mobile'); // To call static method if you don't want to call object
+        // Class.forName('Mobile'); // To call static method if you don't want to call
+        // object
         Mobile obj1 = new Mobile();
         obj1.brand = "Xiaomi";
         obj1.price = "11,000";
@@ -33,6 +40,9 @@ public class StaticVariable {
 
         obj1.show();
         obj2.show();
+
+        // Mobile.show(); Not allowed to call non static method directly from class
+        Mobile.show1(obj1);
 
     }
 }

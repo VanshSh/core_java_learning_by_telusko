@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <user-card>
+      #shadow-root
+      <div>
+        Name:
+        <slot name="username"></slot>
+      </div>
+      <div>
+        Birthday:
+        <slot name="birthday"></slot>
+      </div>
+      <span slot="username">John Smith</span>
+      <span slot="birthday">01.01.2001</span>
+    </user-card>
+  </body>
+</html>
