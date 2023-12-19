@@ -35,7 +35,7 @@ public class StaticVariable {
         Mobile obj2 = new Mobile();
         obj2.brand = "Xiaomi";
         obj2.price = "11,000";
-        // obj2.name = "Xiaomo S3"; // Avoid call static wiht class name
+        // obj2.name = "Xiaomo S3"; // Avoid call static with class name
         Mobile.name = "Xiaomo S3";
 
         obj1.show();
