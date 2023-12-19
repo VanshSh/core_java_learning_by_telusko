@@ -1,34 +1,31 @@
-import java.io.*;
 import java.util.*;
+import java.text.*;
 
 public class Solution {
 
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        double payment = scanner.nextDouble();
+        scanner.close();
 
-        Scanner sc = new Scanner(System.in);
-        String A = sc.next();
-        /* Enter your code here. Print output to STDOUT. */
-        int string_length = A.length();
-        boolean isPalindrome = false;
-        for (int i = 0; i <= string_length / 2; i++) {
-            char startingEle = A.charAt(i);
-            char endingEle = A.charAt(string_length - 1 - i);
+        // Create Locale for India with English language
+        Locale indiaLocale = new Locale("en", "IN");
 
-            if (startingEle == endingEle) {
-                isPalindrome = true;
-            } else {
-                isPalindrome = false;
-                break;
-            }
-        }
+        // Format the payment for each country
+        NumberFormat usFormat = NumberFormat.getCurrencyInstance(Locale.US);
+        NumberFormat indiaFormat = NumberFormat.getCurrencyInstance(indiaLocale);
+        NumberFormat chinaFormat = NumberFormat.getCurrencyInstance(Locale.CHINA);
+        NumberFormat franceFormat = NumberFormat.getCurrencyInstance(Locale.FRANCE);
 
-        if (isPalindrome) {
-            System.out.println("Yes");
-        } else {
-            System.out.println("No");
+        String us = usFormat.format(payment);
+        String india = indiaFormat.format(payment);
+        String china = chinaFormat.format(payment);
+        String france = franceFormat.format(payment);
 
-        }
-
-        sc.close();
+        // Print the formatted values
+        System.out.println("US: " + us);
+        System.out.println("India: " + india);
+        System.out.println("China: " + china);
+        System.out.println("France: " + france);
     }
 }
