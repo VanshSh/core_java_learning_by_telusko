@@ -1,5 +1,6 @@
 {
     "conventionalCommits.scopes": [
         "Static Variable"
-    ]
+    ],
+    "java.debug.settings.onBuildFailureProceed": true
 }
