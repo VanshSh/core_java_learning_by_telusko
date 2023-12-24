@@ -1,4 +1,4 @@
-# 📝 Java Notes 📝:
+# 📝 Java Notes of [Youtube Course](https://www.youtube.com/watch?v=BGTx91t8q50&list=WL&index=1&t=20974s&ab_channel=Telusko).
 
 ## - **Data Types**
 
@@ -108,7 +108,7 @@ int myNum[] = {10, 20, 30, 40};
 
 ## Static Variables
 
-To make something as class variables not object variables.
+- To make something as class variables not object variables.
 
 ```
 class Mobile {
@@ -236,6 +236,48 @@ public class Constructors {
     }
 }
 
+
+
+```
+
+## this and super
+- If we add parameters to the object then it will call the parameterized constructor along with the default constructor of the parent class.
+- Every constructor has the super() method even if we don't call it this super() method calls the constructor of the parent class based on if we pass the parameter or not.
+- Every class in Java extends the Object class as in our case with class A
+- this() will call all the constructor of the same class
+
+```
+class A {
+    public A() {
+
+        System.out.println(" U_U L-2 in ThisandSuper.java => " + "in A");
+    }
+
+    public A(int a) {
+        System.out.println(" U_U L-12 in ThisandSuper.java => " + "in a int");
+    }
+}
+
+class B extends A {
+
+    public B() { // Constructor
+
+        System.out.println(" U_U L-8 in ThisandSuper.java => " + "in B");
+    }
+
+    public B(int b) {
+        this(); // will call all the constructor of the same classs
+        // super(5) this will call the parameterized constructor of parnt class
+        System.out.println(" U_U L-12 in ThisandSuper.java => " + "in b int");
+    }
+}
+
+public class ThisandSuper {
+    public static void main(String[] args) {
+        B obj = new B(54); // this will call the parameterized constructor of the B
+
+    }
+}
 
 
 ```
