@@ -1,5 +1,6 @@
 class NormalCalc {
     public int add(int a, int b) {
+        System.out.println(" U_U L-25 in Inheritance.java => " + "add method is getting called from parent here");
         return a + b;
     }
 
@@ -20,6 +21,12 @@ class AdvCalc extends NormalCalc {
         return a / b;
     }
 
+    public int add(int a, int b) {
+        System.out.println(" U_U L-25 in Inheritance.java => " + "add method is getting called from child here"); // this is called method overwriting
+        return a + b;
+
+    }
+
 }
 
 public class Inheritance {
@@ -35,5 +42,3 @@ public class Inheritance {
     }
 
 }
-
-

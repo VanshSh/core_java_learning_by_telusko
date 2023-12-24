@@ -324,10 +324,12 @@ public class ThisandSuper {
 - When only 2 class is involved in the inheritance it is called single level inheritance
 - More than 2 level is called multi level inheritance
 - Multiple inheritance is not supported in the java because of the ambiguity to choose the method when method is present in multiple classes.
-
+- If parent and child both has the same method then the child method will be given preferred because of the inheritance. *(Method overwriting)*
+- *Method overloading* in Java allows a class to have multiple methods with the same name but different parameter lists
 ```
 class NormalCalc {
     public int add(int a, int b) {
+        System.out.println(" U_U L-25 in Inheritance.java => " + "add method is getting called from parent here");
         return a + b;
     }
 
@@ -346,6 +348,12 @@ class AdvCalc extends NormalCalc {
 
     public int div(int a, int b) {
         return a / b;
+    }
+
+    public int add(int a, int b) {
+        System.out.println(" U_U L-25 in Inheritance.java => " + "add method is getting called from child here"); // this is called method overwriting
+        return a + b;
+
     }
 
 }
