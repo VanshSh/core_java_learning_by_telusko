@@ -374,3 +374,18 @@ public class Inheritance {
 
 
 ```
+
+## Packages and Access modifiers
+- **Packages**
+  - Folders are called packages
+  - '*' means all the files in packages not the folders
+  - package name should be unique
+- **Modifiers**
+  - Try to keep the class public
+  - Try to keep the method public
+  - Try to keep the variable private
+  - Avoid using the default 
+
+
+![Alt text](image.png)
+
