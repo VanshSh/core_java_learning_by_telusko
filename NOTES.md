@@ -290,3 +290,35 @@ class = Calc, Area
 variable and methods = age, getArea()
 Constructors = Area()
 ```
+
+## Anonymous Object
+- If we create the object without any reference then that is called the anonymous object.
+- We can't use it again
+
+```
+
+class B  {
+
+    public B() { // Constructor
+
+        System.out.println(" U_U L-8 in ThisandSuper.java => " + "in B");
+    }
+
+   public void show(){
+        System.out.println(" U_U L-8 in ThisandSuper.java => " + "Inside show");
+
+   }
+}
+
+public class ThisandSuper {
+    public static void main(String[] args) {
+        
+        new B().show(); // anonymous Object created
+
+    }
+}
+
+
+
+
+```
