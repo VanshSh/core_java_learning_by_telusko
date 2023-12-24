@@ -1,36 +1,56 @@
-import java.util.Scanner;
+import java.io.*;
 
-public class Solution {
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.function.*;
+import java.util.regex.*;
+import java.util.stream.*;
+import static java.util.stream.Collectors.joining;
+import static java.util.stream.Collectors.toList;
 
-    public static String getSmallestAndLargest(String s, int k) {
-        String smallest = s.substring(0, k);
-        String largest = s.substring(0, k);
+class Result {
 
-        for (int i = 1; i <= s.length() - k; i++) {
+    /*
+     * Complete the 'findDay' function below.
+     *
+     * The function is expected to return a STRING.
+     * The function accepts following parameters:
+     * 1. INTEGER month
+     * 2. INTEGER day
+     * 3. INTEGER year
+     */
 
-            String currentSubstring = s.substring(i, i + k);
-            if (currentSubstring.compareTo(smallest) < 0) {
-                smallest = currentSubstring;
-            }
-            if (currentSubstring.compareTo(largest) > 0) {
-                largest = currentSubstring;
-            }
-        }
-        // Complete the function
-        // 'smallest' must be the lexicographically smallest substring of length 'k'
-        // 'largest' must be the lexicographically largest substring of length 'k'
+    public static String findDay(int month, int day, int year) {
+        LocalDate date = LocalDate.of(year, month, day);
 
-        return smallest + "\n" + largest;
+        // Format the date to return the day of the week in uppercase
+        return date.getDayOfWeek().name();
     }
 
-    public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-        String s = "welcometojava";
-        int k = 3;
-        // String s = scan.next();
-        // int k = scan.nextInt();
-        scan.close();
+}
 
-        System.out.println(getSmallestAndLargest(s, k));
+public class Solution {
+    public static void main(String[] args) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+
+        String[] firstMultipleInput = bufferedReader.readLine().replaceAll("\\s+$", "").split(" ");
+
+        int month = Integer.parseInt(firstMultipleInput[0]);
+
+        int day = Integer.parseInt(firstMultipleInput[1]);
+
+        int year = Integer.parseInt(firstMultipleInput[2]);
+
+        String res = Result.findDay(month, day, year);
+
+        bufferedWriter.write(res);
+        bufferedWriter.newLine();
+
+        bufferedReader.close();
+        bufferedWriter.close();
     }
 }
