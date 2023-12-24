@@ -1,6 +1,6 @@
 # 📝 Java Notes of [Youtube Course](https://www.youtube.com/watch?v=BGTx91t8q50&list=WL&index=1&t=20974s&ab_channel=Telusko).
 
-## - **Data Types**
+## **Data Types**
 
 ```
  All data types: ***I Float, Clearly Don't Byte Short Long, Double. String!***
@@ -46,7 +46,7 @@ Example: String greeting = "Hello, World!";
 
 ```
 
-## - Object and Classes
+##  Object and Classes
 
 - This is how you create objects and classes and call the method in the other class
 
@@ -75,7 +75,7 @@ public class ObjectFile {
  
  ```
 
-## - Create Array 
+## Create Array 
 
 ```
 int[] myNum = {10, 20, 30, 40};
@@ -86,7 +86,7 @@ int myNum[] = {10, 20, 30, 40};
 
 
 ```
-## - Array loop
+##  Array loop
 
 ```
 
@@ -280,4 +280,13 @@ public class ThisandSuper {
 }
 
 
+```
+
+## Naming conventions
+
+```
+constants = DATA, MY_DATA, PIE
+class = Calc, Area
+variable and methods = age, getArea()
+Constructors = Area()
 ```

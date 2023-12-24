@@ -1,56 +1,36 @@
 import java.io.*;
-
-import java.math.*;
-import java.security.*;
-import java.text.*;
 import java.util.*;
-import java.util.concurrent.*;
-import java.util.function.*;
-import java.util.regex.*;
-import java.util.stream.*;
-import static java.util.stream.Collectors.joining;
-import static java.util.stream.Collectors.toList;
 
-class Result {
-
-    /*
-     * Complete the 'findDay' function below.
-     *
-     * The function is expected to return a STRING.
-     * The function accepts following parameters:
-     * 1. INTEGER month
-     * 2. INTEGER day
-     * 3. INTEGER year
-     */
-
-    public static String findDay(int month, int day, int year) {
-        LocalDate date = LocalDate.of(year, month, day);
-
-        // Format the date to return the day of the week in uppercase
-        return date.getDayOfWeek().name();
+class Area {
+    public static int getArea(int breadth, int height) {
+        if (breadth > 0 && height > 0) {
+            return breadth * height;
+        } else {
+            throw new IllegalArgumentException("Breadth and height must be positive");
+        }
     }
-
 }
 
 public class Solution {
-    public static void main(String[] args) throws IOException {
-        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
 
-        String[] firstMultipleInput = bufferedReader.readLine().replaceAll("\\s+$", "").split(" ");
+    public static void main(String[] args) {
+        /*
+         * Enter your code here. Read input from STDIN. Print output to STDOUT. Your
+         * class should be named Solution.
+         */
 
-        int month = Integer.parseInt(firstMultipleInput[0]);
+        Scanner scanner = new Scanner(System.in);
+        int breadth = scanner.nextInt();
+        int height = scanner.nextInt();
 
-        int day = Integer.parseInt(firstMultipleInput[1]);
+        scanner.close();
 
-        int year = Integer.parseInt(firstMultipleInput[2]);
+        try {
+            int area = Area.getArea(breadth, height);
+            System.out.println(area);
+        } catch (IllegalArgumentException e) {
+            System.out.println("java.lang.Exception: Breadth and height must be positive");
+        }
 
-        String res = Result.findDay(month, day, year);
-
-        bufferedWriter.write(res);
-        bufferedWriter.newLine();
-
-        bufferedReader.close();
-        bufferedWriter.close();
     }
 }
