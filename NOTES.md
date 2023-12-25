@@ -549,7 +549,7 @@ public class InnerClass {
 
 - To do the method overwriting we need to create the another class and then method is updated in the extended class of the parent class but just to update the one method creating
   whole class is not necessary. For this we use _Anonymous Inner Class_
-
+- To use it with the abstract anonymous inner class just convert the parent class to the abstract class.
 ```
 class A_AnonymousInnerClass {
    public void show() {
