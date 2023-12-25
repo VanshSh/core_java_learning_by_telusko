@@ -463,12 +463,12 @@ BPoly obj2 = (BPoly) obj1; // It is called Downcasting
      obj2.show();
 
 ```
+
 ## Abstract Keyword
 
 - If we don't know the functionality of the method then we can just declare it and does not define that method but we have to make this method and the class as abstract class
 - You can't create the object of the abstract class
 - Abstract class does not need to have the abstract method but vice versa is not true
-
 
 ```
 abstract class Car {
@@ -491,7 +491,7 @@ abstract class WagnoR extends Car {
 }
 
 class AdvanceWagonR extends WagnoR { // These classes are called conceret class
-    
+
     public void flying() {
         System.out.println("This car is flying...");
     }
@@ -511,6 +511,7 @@ public class AbstractKeyword {
 ```
 
 ## Inner Class
+
 - Defining class inside the class
 
 ```
@@ -541,5 +542,32 @@ public class InnerClass {
         obj1.config();
 
     }
+}
+```
+
+## Anonymous Inner Class
+
+- To do the method overwriting we need to create the another class and then method is updated in the extended class of the parent class but just to update the one method creating
+  whole class is not necessary. For this we use _Anonymous Inner Class_
+
+```
+class A_AnonymousInnerClass {
+   public void show() {
+       System.out.println("Inside the A_AnonymousInnerClass");
+
+   }
+}
+
+public class AnonymousInnerClass {
+   public static void main(String[] args) {
+       A_AnonymousInnerClass obj = new A_AnonymousInnerClass() {  // Since this class has no name this practice is called Anonymous Inner Class
+           public void show() {
+               System.out.println("Inside the A_AnonymousInnerClass without extending");
+
+           }
+
+       };
+       obj.show();
+   }
 }
 ```
