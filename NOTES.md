@@ -463,3 +463,52 @@ BPoly obj2 = (BPoly) obj1; // It is called Downcasting
      obj2.show();
 
 ```
+## Abstract Keyword
+
+- If we don't know the functionality of the method then we can just declare it and does not define that method but we have to make this method and the class as abstract class
+- You can't create the object of the abstract class
+- Abstract class does not need to have the abstract method but vice versa is not true
+
+
+```
+abstract class Car {
+    public abstract void drive();
+
+    public abstract void flying();
+
+    public void playMusic() {
+        System.out.println("Playing Music");
+    }
+}
+
+abstract class WagnoR extends Car {
+
+    public void drive() { // If you extends the abstract class it is compulsory to define the abstract
+                          // method
+        System.out.println("I am Driving");
+
+    }
+}
+
+class AdvanceWagonR extends WagnoR { // These classes are called conceret class
+    
+    public void flying() {
+        System.out.println("This car is flying...");
+    }
+}
+
+public class AbstractKeyword {
+    // Car car = new Car(); We can't instantiate the abstract class
+
+    public static void main(String[] args) {
+
+        Car car = new AdvanceWagonR();
+        car.drive();
+        car.playMusic();
+        car.flying();
+    }
+}
+
+
+
+```
