@@ -389,3 +389,36 @@ public class Inheritance {
 
 ![Alt text](image.png)
 
+
+## Polymorphism
+- This obj is bheaving differently it is called polymorphism
+-  Which class obj will call will be decided at the run time.
+- All this concept is called Dynamic method dispatch
+
+```
+class APoly {
+    public void show() {
+        System.out.println("In A Show Method");
+    }
+}
+
+class BPoly extends APoly {
+    public void show() {
+        System.out.println("In B Show Method");
+    }
+}
+
+public class Polymorphism {
+
+    public static void main(String[] args) {
+        APoly obj = new APoly();
+        obj.show();
+        obj = new BPoly();
+        obj.show();
+
+      
+    }
+
+}
+
+```
