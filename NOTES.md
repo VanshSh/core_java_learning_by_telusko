@@ -46,36 +46,36 @@ Example: String greeting = "Hello, World!";
 
 ```
 
-##  Object and Classes
+## Object and Classes
 
 - This is how you create objects and classes and call the method in the other class
 
- ```
- class Calculator {
-    public int add() {
-        int num1 = 6;
-        int num2 = 56;
-        int result = num1 + num2;
-        System.out.println(" U_U L-6 in ObjectFile.java => " + result);
-        return (result);
+```
+class Calculator {
+   public int add() {
+       int num1 = 6;
+       int num2 = 56;
+       int result = num1 + num2;
+       System.out.println(" U_U L-6 in ObjectFile.java => " + result);
+       return (result);
 
-    }
+   }
 
 }
 
 public class ObjectFile {
-    public static void main(String[] args) {
+   public static void main(String[] args) {
 
-        Calculator calc = new Calculator();
-        calc.add();
+       Calculator calc = new Calculator();
+       calc.add();
 
-    }
+   }
 }
 
- 
- ```
 
-## Create Array 
+```
+
+## Create Array
 
 ```
 int[] myNum = {10, 20, 30, 40};
@@ -86,7 +86,8 @@ int myNum[] = {10, 20, 30, 40};
 
 
 ```
-##  Array loop
+
+## Array loop
 
 ```
 
@@ -199,6 +200,7 @@ public class Encapsulation {
 ```
 
 ## Constructors
+
 - It should be same as a class name
 - Does not return anything
 - It get called automatically whenever object is created
@@ -241,6 +243,7 @@ public class Constructors {
 ```
 
 ## this and super
+
 - If we add parameters to the object then it will call the parameterized constructor along with the default constructor of the parent class.
 - Every constructor has the super() method even if we don't call it this super() method calls the constructor of the parent class based on if we pass the parameter or not.
 - Every class in Java extends the Object class as in our case with class A
@@ -292,6 +295,7 @@ Constructors = Area()
 ```
 
 ## Anonymous Object
+
 - If we create the object without any reference then that is called the anonymous object.
 - We can't use it again
 
@@ -312,7 +316,7 @@ class B  {
 
 public class ThisandSuper {
     public static void main(String[] args) {
-        
+
         new B().show(); // anonymous Object created
 
     }
@@ -321,11 +325,13 @@ public class ThisandSuper {
 ```
 
 ## Inheritance
+
 - When only 2 class is involved in the inheritance it is called single level inheritance
 - More than 2 level is called multi level inheritance
 - Multiple inheritance is not supported in the java because of the ambiguity to choose the method when method is present in multiple classes.
-- If parent and child both has the same method then the child method will be given preferred because of the inheritance. *(Method overwriting)*
-- *Method overloading* in Java allows a class to have multiple methods with the same name but different parameter (number of parameters OR type of parameter)
+- If parent and child both has the same method then the child method will be given preferred because of the inheritance. _(Method overwriting)_
+- _Method overloading_ in Java allows a class to have multiple methods with the same name but different parameter (number of parameters OR type of parameter)
+
 ```
 class NormalCalc {
     public int add(int a, int b) {
@@ -376,24 +382,25 @@ public class Inheritance {
 ```
 
 ## Packages and Access modifiers
+
 - **Packages**
   - Folders are called packages
-  - '*' means all the files in packages not the folders
+  - '\*' means all the files in packages not the folders
   - package name should be unique
 - **Modifiers**
   - Try to keep the class public
   - Try to keep the method public
   - Try to keep the variable private
-  - Avoid using the default 
-
+  - Avoid using the default
 
 ![Alt text](image.png)
 
-
 ## Polymorphism
+
 - This obj is bheaving differently it is called polymorphism
--  Which class obj will call will be decided at the run time.
+- Which class obj will call will be decided at the run time.
 - All this concept is called Dynamic method dispatch
+- You can create your own method of the objects that will overwrite the inbuilt methods of the object.
 
 ```
 class APoly {
@@ -416,7 +423,7 @@ public class Polymorphism {
         obj = new BPoly();
         obj.show();
 
-      
+
     }
 
 }
@@ -434,4 +441,25 @@ public class Polymorphism {
     public final void announcement() {
         System.out.println("Don't over write me!");
     }
+```
+
+## Upcasting and Downcasting
+
+- When the variable is change to different type is called type casting
+- When child object is casted as the parent object it is called upcasting
+- Vice Versa of the above is called downcasting
+
+```
+double  d = 4.5;
+int i  = (int) d;
+
+
+APoly obj1 = new BPoly();
+// APoly obj1 = (A) new BPoly(); // It is the same as above , it is calleupcasting
+    obj1.show();
+
+ // Casting to the correct type
+BPoly obj2 = (BPoly) obj1; // It is called Downcasting
+     obj2.show();
+
 ```
