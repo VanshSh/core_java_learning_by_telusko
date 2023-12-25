@@ -422,3 +422,16 @@ public class Polymorphism {
 }
 
 ```
+
+## Final Keyword
+
+- Use final keyword along with class, method and variable
+
+```
+   final double PIE = 3.14d;
+   // PIE = 3.148456464d; // Can;t overwrite it because of the final in the variable
+
+    public final void announcement() {
+        System.out.println("Don't over write me!");
+    }
+```
