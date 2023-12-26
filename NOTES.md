@@ -550,6 +550,7 @@ public class InnerClass {
 - To do the method overwriting we need to create the another class and then method is updated in the extended class of the parent class but just to update the one method creating
   whole class is not necessary. For this we use _Anonymous Inner Class_
 - To use it with the abstract anonymous inner class just convert the parent class to the abstract class.
+
 ```
 class A_AnonymousInnerClass {
    public void show() {
@@ -570,4 +571,66 @@ public class AnonymousInnerClass {
        obj.show();
    }
 }
+```
+
+## Interface
+
+- If class has only abstract methods we can create interfaces these are not classes
+- Every method in the interface is public and abstract
+- Every variable is final and static
+- We can't instantiate interfaces
+- class - class => extends
+- interface - interface => extends
+- interface - class => implements
+- They don't have their own memory in the heap unlike objects
+- We need reference because we need one parent class that will shadow all the other classese. So that while creating the obejct we can refere the parent class and object of the subclass and this main parent class can be written as reference since it does not have any special methods
+
+```
+interface Interface_A {
+    int age = 22; // These are final and static
+    String country = "India";
+
+    void show();
+
+    void config();
+}
+
+interface Interface_X {
+    void run();
+}
+
+interface Interface_Y extends Interface_X {
+
+}
+
+class Interface_B implements Interface_A, Interface_Y {
+    public void show() {
+        System.out.println("In show Interface_B");
+    }
+
+    public void config() {
+        System.out.println("In config Interface_B");
+    }
+
+    public void run() {
+        System.out.println("In run Interface_B");
+    }
+}
+
+public class Interface {
+    public static void main(String[] args) {
+
+        Interface_A obj;
+        obj = new Interface_B();
+        obj.show();
+        obj.config();
+
+        Interface_Y obj1 = new Interface_B();
+        obj1.run();
+        System.out.println(Interface_A.age);
+        System.out.println(Interface_A.country);
+
+    }
+}
+
 ```

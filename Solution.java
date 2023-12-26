@@ -1,23 +1,37 @@
 import java.util.*;
 
+class Sports {
+
+    String getName() {
+        return "Generic Sports";
+    }
+
+    void getNumberOfTeamMembers() {
+        System.out.println("Each team has n players in " + getName());
+    }
+}
+
+class Soccer extends Sports {
+    @Override
+    String getName() {
+        return "Soccer Class";
+    }
+
+    // Write your overridden getNumberOfTeamMembers method here
+    void getNumberOfTeamMembers() {
+        System.out.println("Each team has 11 players in " + getName());
+    }
+
+}
+
 public class Solution {
 
     public static void main(String[] args) {
-
-        Scanner scan = new Scanner(System.in);
-        int n = scan.nextInt();
-
-        int[] arr = new int[n];
-
-        for (int i = 0; i < n; i++) {
-            arr[i] = scan.nextInt();
-        }
-
-        scan.close();
-
-        // Prints each sequential element in array a
-        for (int i = 0; i < arr.length; i++) {
-            System.out.println(arr[i]);
-        }
+        Sports c1 = new Sports();
+        Soccer c2 = new Soccer();
+        System.out.println(c1.getName());
+        c1.getNumberOfTeamMembers();
+        System.out.println(c2.getName());
+        c2.getNumberOfTeamMembers(11);
     }
 }
