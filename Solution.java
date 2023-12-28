@@ -1,37 +1,43 @@
+import java.io.*;
 import java.util.*;
 
-class Sports {
-
-    String getName() {
-        return "Generic Sports";
-    }
-
-    void getNumberOfTeamMembers() {
-        System.out.println("Each team has n players in " + getName());
-    }
-}
-
-class Soccer extends Sports {
-    @Override
-    String getName() {
-        return "Soccer Class";
-    }
-
-    // Write your overridden getNumberOfTeamMembers method here
-    void getNumberOfTeamMembers() {
-        System.out.println("Each team has 11 players in " + getName());
-    }
+class JavaList {
 
 }
 
 public class Solution {
 
     public static void main(String[] args) {
-        Sports c1 = new Sports();
-        Soccer c2 = new Soccer();
-        System.out.println(c1.getName());
-        c1.getNumberOfTeamMembers();
-        System.out.println(c2.getName());
-        c2.getNumberOfTeamMembers(11);
+        Scanner scanner = new Scanner(System.in);
+
+        // Number of elements in the list
+        int numberOfList = scanner.nextInt();
+        ArrayList<Integer> list = new ArrayList<Integer>();
+
+        // Create a list
+        for (int i = 0; i < numberOfList; i++) {
+            list.add(scanner.nextInt());
+        }
+
+        // Read the number of queries
+        int numberOfQueries = scanner.nextInt();
+
+        for (int i = 0; i < numberOfQueries; i++) {
+            String queryType = scanner.next();
+            if (queryType.equals("Insert")) {
+                int index = scanner.nextInt();
+                int value = scanner.nextInt();
+                list.add(index, value);
+            } else if (queryType.equals("Delete")) {
+                int index = scanner.nextInt();
+                list.remove(index);
+            }
+
+        }
+        // Print the updated list
+        for (int num : list) {
+            System.out.print(num + " ");
+        }
+        scanner.close();
     }
 }
