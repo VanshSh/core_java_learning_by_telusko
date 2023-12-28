@@ -634,3 +634,30 @@ public class Interface {
 }
 
 ```
+
+## Enums
+
+- They are names constants
+- They are like status
+- We can't extend them with any other class except this they behave completely like classes.
+
+```
+enum Status {
+    Running, Failed, Pending, Success
+}
+
+public class EnumsAndAnotations {
+
+    public static void main(String[] args) {
+        int i = 5;
+        Status s = Status.Pending;
+        Status[] ss = Status.values();
+        System.out.println(s);
+        for (Status x : ss) {
+            System.out.println(s + " " + x.ordinal());
+        }
+    }
+
+}
+
+```
