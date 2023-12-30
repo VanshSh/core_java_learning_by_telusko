@@ -659,5 +659,57 @@ public class EnumsAndAnotations {
     }
 
 }
+```
+## Annotations
+- It is use to tell the compiler what we wants to achieve.
+- Functional Interface which has only one method
+- We can use lambda expressions in the interface to call the method in them
+```
+class A_Annontation {
+    public void setName() {
+        System.out.println("I am in A setName");
+    }
+}
+
+class B_Annontaion extends A_Annontation {
+    @Override
+    public void setName() {
+        System.out.println("I am in B setName");
+    }
+}
+
+public class Annotations {
+    public static void main(String[] args) {
+        A_Annontation obj = new A_Annontation();
+        obj.setName();
+    }
+}
+
+
+-- Functional Interface
+@FunctionalInterface
+interface MyFunctionalInterface {
+    void myMethod(int i);
+}
+
+public class FunctionalInterface {
+
+    public static void main(String[] args) {
+        // Using a lambda expression to implement the functional interface
+        MyFunctionalInterface myFunctionalInterface = (i) -> {
+            System.out.println("Hello from myMethod! " + i);
+        };
+        // MyFunctionalInterface myFunctionalInterface = i -> System.out.println("Hello
+        // from myMethod! " + i); // Can also be used like this
+
+        // Calling the method
+        myFunctionalInterface.myMethod(5);
+    }
+}
+
+
+
+
+
 
 ```

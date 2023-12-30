@@ -2,7 +2,7 @@ enum Status {
     Running, Failed, Pending, Success
 }
 
-public class EnumsAndAnotations {
+public class Enum {
 
     public static void main(String[] args) {
         int i = 5;
