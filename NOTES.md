@@ -706,10 +706,137 @@ public class FunctionalInterface {
         myFunctionalInterface.myMethod(5);
     }
 }
+```
 
+## Exception Handling
+- We can write multiple catch bocks
+- Once the code gets exception in the try block it will go directly into catch block without any execution further.
+- Parent exception should be caught at the end of the catch block
+- You can create your exception extending the class Exception
+- In try block you conditionally check and throw your own exception
+- Suppose we are calling method a and b from c method then we  can use ***throws*** to handle the exception
+- Use Scanner class to read the user Input.
+- Finally is most used to close the connection
+- In latest versions of Java you can pass the statement opening for the Scanner or connections in the try(// HERE) to close the connection
 
+```
+public class ExceptionHanding {
+    public static void main(String[] args) {
 
+        int i = 18;
+        int j = 0;
 
+        try {
+            j = 18 / i;
+            if (j == 0) {
+                throw new ArithmeticException("j should be greater than 0");
+            }
+        } catch (ArithmeticException e) {
+            System.out.println("Arithmetic error  " + e);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
 
+}
+```
+
+## Threading
+- Smallest unit which you can work with
+- You can't use normal obj in threads
+- In every thread you need to have run method
+- We can set the Priority of the Thread
+- We can create a thread using the implements runnable instead of the class
+  Thread.
+- Thread safe = Only one thread can be running at a time.
+- Use synchronized in the method to run the method with one thread at a time
+- ![Alt text](image-1.png)
+
+```
+class Counter {
+
+    int count = 0;
+
+    public synchronized void increment() {
+        count += 1;
+    }
+}
+// class ThreadA extends Thread {
+// class ThreadA implements Runnable {
+// public void run() {
+// for (int i = 1; i <= 6; i++) {
+// System.out.println("In => A");
+// try {
+// Thread.sleep(10);
+// } catch (InterruptedException e) {
+// e.printStackTrace();
+// }
+// }
+// }
+// }
+
+// class ThreadB extends Thread {
+class ThreadB implements Runnable {
+    public void run() {
+        for (int i = 1; i <= 6; i++) {
+            // System.out.println("In ===> B");
+            // try {
+            // Thread.sleep(10);
+            // } catch (InterruptedException e) {
+            // e.printStackTrace();
+            // }
+        }
+    }
+}
+
+public class Multithreading {
+    public static void main(String[] args) throws InterruptedException {
+
+        // ThreadA athread = new ThreadA();
+        ThreadB bthread = new ThreadB();
+        // bthread.setPriority(Thread.MAX_PRIORITY); // To set priority when creating
+        // threads using the Thread Class
+        // athread.start();
+        // bthread.start();
+
+        // Runnable obj1 = new ThreadA();
+
+        Counter counter = new Counter();
+        Runnable obj1 = () -> {
+            for (int i = 1; i <= 1000; i++) {
+                counter.increment();
+                // System.out.println("In => A");
+                // try {
+                // Thread.sleep(10);
+                // } catch (InterruptedException e) {
+                // e.printStackTrace();
+                // }
+            }
+        };
+
+        // Runnable obj2 = new ThreadB();
+        Runnable obj2 = () -> {
+            for (int i = 1; i <= 1000; i++) {
+                counter.increment();
+
+                // System.out.println("In => B");
+                // try {
+                // Thread.sleep(10);
+                // } catch (InterruptedException e) {
+                // e.printStackTrace();
+                // }
+            }
+        };
+
+        Thread t1 = new Thread(obj1);
+        Thread t2 = new Thread(obj2);
+        t1.start();
+        t2.start();
+        t1.join();
+        t2.join();
+
+        System.out.println(counter.count);
+    }
+}
 
 ```
