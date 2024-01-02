@@ -842,4 +842,12 @@ public class Multithreading {
 ```
 
 ## Collection
-- List, Queue, Set extends the collection interfacce
+- List, Queue, Set extends the collection interfacce\
+- If you want to work with index use List
+- If you just want to add and fetch then a collection is better approach
+- If you want to have a collection of unique items use set HashSet
+- Set does not support index value
+- Set does not return the value in the sorted format
+- In thread safe implementation is not required => HashMap
+- If thread safe implementation required => HashTable
+- Remainign:  Comparator vs Comparable =>>>>>>>>>>
