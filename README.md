@@ -840,3 +840,6 @@ public class Multithreading {
 }
 
 ```
+
+## Collection
+- List, Queue, Set extends the collection interfacce
