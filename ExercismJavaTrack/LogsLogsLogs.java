@@ -1,4 +1,4 @@
-package ExercismJavaTrack;
+
 
 enum Rating {
     GREAT(5),
@@ -85,16 +85,6 @@ public class LogsLogsLogs {
  * return getLogLevel().getLogCode() + ":" + sentence;
  * }
  * }
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
  * 
  * 
  */

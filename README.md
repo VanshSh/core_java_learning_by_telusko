@@ -851,3 +851,7 @@ public class Multithreading {
 - In thread safe implementation is not required => HashMap
 - If thread safe implementation required => HashTable
 - Remainign:  Comparator vs Comparable =>>>>>>>>>>
+
+
+## Stream API 
+- Helps you manipulate the array without affecting the original collection structure
